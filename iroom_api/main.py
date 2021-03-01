@@ -6,7 +6,7 @@ from kivy.uix.widget import Widget
 
 # Builder.load_file('widgets.kv')
 
-
+#Layout for the Login Screen on the Application
 class LoginScreen(GridLayout):
     def __init__(self, **kwargs):
         super(LoginScreen, self).__init__(**kwargs)
