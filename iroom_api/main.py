@@ -3,25 +3,35 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
+from kivy.uix.button import Button
 
 # Builder.load_file('widgets.kv')
-#anna's change
 
 #Layout for the Login Screen on the Application
 class LoginScreen(GridLayout):
     def __init__(self, **kwargs):
         super(LoginScreen, self).__init__(**kwargs)
-        self.cols = 2
-        self.add_widget(Label(text="iRoom"))
-        self.add_widget(Label(text="help"))
-        self.add_widget(Label(text="User Name"))
-        self.username = TextInput(multiline=False)
-        self.add_widget(self.username)
-        self.add_widget(Label(text="password"))
-        self.password = TextInput(password=True, multiline=False)
-        self.add_widget(self.password)
-        self.add_widget(Label(text="Log in"))
 
+        self.cols = 1
+
+        self.inside = GridLayout()
+        self.inside.cols = 2
+
+        self.inside.add_widget(Label(text="iRoom"))
+        self.inside.add_widget(Label(text="help"))
+
+        self.inside.add_widget(Label(text="User Name"))
+        self.username = TextInput(multiline=False)
+        self.inside.add_widget(self.username)
+
+        self.inside.add_widget(Label(text="password"))
+        self.password = TextInput(password=True, multiline=False)
+        self.inside.add_widget(self.password)
+
+        #self.add_widget(Label(text="Log in"))
+        self.add_widget(self.inside)
+        self.login = Button(text="Log In", font_size=30)
+        self.add_widget(self.submit)
 
 class Background(Widget):
     pass
