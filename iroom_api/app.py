@@ -3,7 +3,6 @@ from flask import render_template
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def hello_world():
     return "Hello, World!"
@@ -24,3 +23,7 @@ def display_register():
 @app.route("/course1.html")
 def display_courses():
     return render_template("courses.html")
+
+@app.route("/classes.html")
+def display_classes():
+    return render_template("classes.html")
