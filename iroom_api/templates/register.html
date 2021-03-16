@@ -70,13 +70,18 @@ h2{
 <h1>iRoom</h1>
 <h2>Register New User</h2>
 
-<form action="/register_user.php">
+<form action="/new_user.html">
   <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" value=""><br>
+  <input type="text" id="email" name="email" value=""><br><br>
   <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" value=""><br>
+  <input type="text" id="username" name="username" value=""><br><br>
   <label for="password">Password (8+ characters):</label><br>
   <input type="password" minlength=8 required id="password" name="password" value=""><br><br>
+  <label for="student">Student</label>
+  <input type="radio" id="student" name="student_prof" value="s">
+  <label for="prof">Professor</label>
+  <input type="radio" id="prof" name="student_prof" value="p"><br>
+  <br><br><br>
   <input type="submit" value="Submit">
 </form>
 
