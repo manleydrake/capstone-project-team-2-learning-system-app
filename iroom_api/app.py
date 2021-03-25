@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 import csv
+import random
 
 app = Flask(__name__)
 
@@ -28,10 +30,14 @@ def display_courses():
 def display_classes():
     return render_template("classes.html")
 
-@app.route("/new_user.html")#/new_user.html?email=a&username=d&password=12345678&student_prof=s
-def register_new_user(username, email, password, student_prof):
+@app.route("/new_user.html", methods=["post"])#/new_user.html?email=a&username=d&password=12345678&student_prof=s
+def register_new_user():
+    username = request.form['username']
+    email = request.form['email']
+    password = request.form['password']
+    student_prof = request.form['student_prof']
     add_user(username, email, password, student_prof)
-    return render_template("home.html", user=user)
+    return render_template("home.html",user=username)
 
 def read_users_csv():
     with open('database/users.csv', newline='') as csvfile:
@@ -41,5 +47,6 @@ def add_user(username, email, password, student_prof):
     with open('database/users.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        #Read last row and determine user_id
-        writer.writerow(user_id, username, email, password, student_prof)
+        #Read last row and determine user_id or assign random userID
+        user_id = random.randint(1000000, 9999999)
+        writer.writerow([user_id, username, email, password, student_prof])
