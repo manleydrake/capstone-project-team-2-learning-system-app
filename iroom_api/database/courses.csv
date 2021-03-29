@@ -1,3 +1,11 @@
-course_id	course_name	course_instructor_id	course_info
-10001	CS 167: Machine Learning	10002	Computers learn and stuff
-10002	Math 100: Calculus 3	38475	Multivariate Calculus with an emphasis on multidimensional applications
+course_id,course_name,instructor_id
+10001,CS 167: Machine Learning,10010
+10002,Math 100: Calculus 3,10011
+10003,CS 195: Human Computer Interaction,10012
+10004,Bio 116: Bioinformatics,10013
+10005,IS 160: Database Management,10014
+10006,Math 054: Discrete Mathematics,10011
+10007,Advanced Biochemistry,10015
+10008,Advanced Bioinformatics,10013
+10009,Reading and Writing Poetry,10016
+10100,Public Speaking,10017

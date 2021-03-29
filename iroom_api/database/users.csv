@@ -1,1 +1,12 @@
-8446648,Kellen124,kellen.karls@drake.edu,dasdasdasdasdasd,p
+user_id,first_name,last_name,username,email,password,profession,instructor_id
+8446648,Kellen,Karls,Kellen124,kellen.karls@drake.edu,dasdasdasdasdasd,s,
+8446649,Anna,Broesder,Anna123,anna.broesder@drake.edu,annaspassword,s,
+8446650,Amber,Billings,Amber123,amber.billings@drake.edu,amberspassword,s,
+8447000,Eric,Manley,profmanley,eric.manley@drake.edu,profmanleypassword,p,10010
+8447001,Chris,Porter,profporter,chris.porter@drake.edu,profporterpassword,p,10011
+8447002,Meredith,Moore,profmoore,meredith.moore@drake.edu,profmoorepassword,p,10012
+8447003,Jerry,Honts,profhonts,jerry.honts@drake.edu,profhontspassword,p,10013
+8447004,Alanah,Mitchell,profmitchell,alanah.mitchell@drake.edu,profmitchellpassword,p,10014
+8447005,Ryan,Sturms,profsturms,ryan.sturms@drake.edu,profsturmspassword,p,10015
+8447006,Leah,Huzier,profhuzier,leah.huzier@drake.edu,profhuzierpassword,p,10016
+8447007,Ellen,Rhodes,profrhodes,ellen.rhodes@drake.edu,profrhodespassword,p,10017
