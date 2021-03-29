@@ -9,6 +9,20 @@ h1{
     font-size: 2.5em;
 }
 
+h2{
+    font-family: 'RocknRoll One', sans-serif;
+    font-weight: normal;
+    color: #2d0b38;
+    font-size: 1.5em;
+}
+
+h3{
+    font-family: 'RocknRoll One', sans-serif;
+    font-weight: normal;
+    color: #cf2213;
+    font-size: 1em;
+}
+
 .navbar {
   overflow: hidden;
   background-color: #333;
