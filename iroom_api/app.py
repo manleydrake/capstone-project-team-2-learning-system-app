@@ -30,7 +30,7 @@ def display_courses():
 def display_classes():
     return render_template("classes.html")
 
-@app.route("/new_user.html", methods=["post"])#/new_user.html?email=a&username=d&password=12345678&student_prof=s
+@app.route("/new_user.html", methods=["post"])
 def register_new_user():
     username = request.form['username']
     email = request.form['email']
