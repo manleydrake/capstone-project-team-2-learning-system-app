@@ -16,7 +16,11 @@
 <div class="navbar">
   <a href="/home.html">Home</a>
   <a href="/classes.html">Classes</a>
-  <a href="/login.html", style="float:right;">Log In</a>
+  {% if session['username'] %}
+    <a href="/user_page.html", style="float:right;">{{session['username']}}</a>
+  {% else %}
+    <a href="/login.html", style="float:right;">Log In</a>
+  {% endif %}
 </div>
 
 <div class="block1">

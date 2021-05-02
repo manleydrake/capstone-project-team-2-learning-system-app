@@ -45,12 +45,30 @@
 </div>
 
 <div class="block1">
-<h1>iRoom</h1>
+<h1>Hello {{session['username']}}!</h1>
+<br><br><br>
+{% if possible_courses %}
+<form action="/add_course.html" method="post">
+  {% for value in possible_courses %}
+  <label for {{value[1]}}>{{value[1]}}</label>
+  <input type="radio" id={{value[0]}} name=course_to_add value={{value[0]}}><br>
+  {% endfor %}
+  <br>
+  <input type="submit" id="sub" name="sub" value="Add Course?"><br><br>
+</form>
+{% else %}
+<form action="/course_search.html" method="post">
+  <label for="course_search">Search for course by name</label>
+  <input type="text" id="course_search" name="course_search" value="">
+  <input type="submit" id="sub" name="sub" value="Search"><br><br>
+</form>
+{% endif %}
 
-<h2>{{class_name}}</h2>
-
+<br><br><br><br><br><br><br><br><br>
+<form action="/logout.html" method="post">
+  <input type="submit" id="logout" name="logout" value="Logout?"><br><br>
+</form>
 </div>
 
 </body>
 </html>
-
