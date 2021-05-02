@@ -20,18 +20,24 @@ class LoginScreen(GridLayout):
         self.inside.add_widget(Label(text="iRoom"))
         self.inside.add_widget(Label(text="help"))
 
-        self.inside.add_widget(Label(text="User Name"))
+        self.inside.add_widget(Label(text="User Name: "))
         self.username = TextInput(multiline=False)
         self.inside.add_widget(self.username)
 
-        self.inside.add_widget(Label(text="password"))
+        self.inside.add_widget(Label(text="Password: "))
         self.password = TextInput(password=True, multiline=False)
         self.inside.add_widget(self.password)
 
-        #self.add_widget(Label(text="Log in"))
         self.add_widget(self.inside)
+
         self.login = Button(text="Log In", font_size=30)
-        self.add_widget(self.submit)
+        self.login.bind(on_press=self.pressed)
+        self.add_widget(self.login)
+
+    def pressed(self, instance):
+        userName = self.username.text
+        print("Welcome", userName)
+
 
 class Background(Widget):
     pass
