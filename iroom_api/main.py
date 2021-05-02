@@ -9,34 +9,12 @@ from kivy.uix.button import Button
 
 #Layout for the Login Screen on the Application
 class LoginScreen(GridLayout):
-    def __init__(self, **kwargs):
-        super(LoginScreen, self).__init__(**kwargs)
+    username = ObjectProperty(None)
+    password = ObjectProperty(None)
 
-        self.cols = 1
-
-        self.inside = GridLayout()
-        self.inside.cols = 2
-
-        self.inside.add_widget(Label(text="iRoom"))
-        self.inside.add_widget(Label(text="help"))
-
-        self.inside.add_widget(Label(text="User Name: "))
-        self.username = TextInput(multiline=False)
-        self.inside.add_widget(self.username)
-
-        self.inside.add_widget(Label(text="Password: "))
-        self.password = TextInput(password=True, multiline=False)
-        self.inside.add_widget(self.password)
-
-        self.add_widget(self.inside)
-
-        self.login = Button(text="Log In", font_size=30)
-        self.login.bind(on_press=self.pressed)
-        self.add_widget(self.login)
-
-    def pressed(self, instance):
-        userName = self.username.text
-        print("Welcome", userName)
+    def btn(self):
+        print("Welcome", self.username.text)
+    pass
 
 
 class Background(Widget):
