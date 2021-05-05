@@ -4,31 +4,55 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
+from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
 
-# Builder.load_file('widgets.kv')
+kv = Builder.load_file("my.kv")
 
-#Layout for the Login Screen on the Application
-class LoginScreen(GridLayout):
-    username = ObjectProperty(None)
-    password = ObjectProperty(None)
 
-    def btn(self):
-        print("Welcome", self.username.text)
+class LoginScreen(Screen):
     pass
 
 
-class Background(Widget):
+class HomeScreen(Screen):
+    pass
+
+class ClassScreen(Screen):
+    pass
+
+class MyScreenManager(ScreenManager):
     pass
 
 
-class HomeScreen(Widget):
-    pass
-
-
-class MyApp(App):
+class MyMainApp(App):
     def build(self):
-        return LoginScreen()
+        sm = MyScreenManager()
+        return sm
 
 
 if __name__ == "__main__":
-    MyApp().run()
+    MyMainApp().run()
+
+# Layout for the Login Screen on the Application
+# class LoginScreen(GridLayout):
+
+
+#    def btn(self):
+#        print("Welcome", self.username.text)
+#   pass
+
+# class Background(Widget):
+#    pass
+
+
+# class HomeScreen(Widget):
+
+#   pass
+
+
+# sm = ScreenManager()
+# sm.add_widget(LoginScreen(name='loginscreen'))
+# sm.add_widget(HomeScreen(name='homescreen'))
+# return sm
+# return LoginScreen()

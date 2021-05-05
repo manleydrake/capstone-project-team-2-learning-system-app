@@ -1,7 +1,11 @@
+<MyScreenManager>:
+    LoginScreen:
+    HomeScreen:
+    ClassScreen:
+
 <LoginScreen>
 
-    username: username
-    password: password
+    name: "login"
 
     GridLayout:
         cols:1
@@ -20,45 +24,92 @@
                 multiline: False
         Button:
             text: "Login"
-            on_press: root.btn()
+            on_release:
+                app.root.current = 'home'
+                root.manager.transition.direction = "left"
 
 
-<HomeScreen>:
-    Background:
-        canvas:
-            Rectangle:
-                pos: 0, self.center_y
-                size: self.width, 10
-            Rectangle:
-                pos: 0, 0
-                size: self.width, 10
-            
+
+<HomeScreen>
+    name: "home"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
         Label:
-            font_size: 70  
-            center_x: root.width / 4
-            top: root.top - 50
-            text: "0"
-        
+            text: "iRoom"
+        Button:
+            text: "Class 1"
+            on_release:
+                app.root.current = 'classes'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Class 2"
+            on_release:
+                app.root.current = 'classes'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Class 3"
+            on_release:
+                app.root.current = 'classes'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Class 4"
+            on_release:
+                app.root.current = 'classes'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Logout"
+            on_release:
+                app.root.current = 'login'
+                root.manager.transition.direction = "right"
+
+
+<ClassScreen>
+    name: "classes"
+
+    GridLayout:
+        cols:1
+
         Label:
-            font_size: 70  
-            center_x: root.width * 3 / 4
-            top: root.top - 50
-            text: "0"
-        
-        AnchorLayout:
-            Button:
-                font_size: 70
-                text: "HOME"
-                anchor_x: "left"
-                anchor_y: "bottom"
-                size_hint: .2,.1
-
-
-<Background>:
-    FloatLayout:
-        canvas.before:
-            Color:
-                rgba:0,1,0,1
-            Rectangle:
-                pos: self.pos
-                size: self.size
+            text: "Insert className here:"
+        Label:
+            text: "Insert professorName here"
+        Label:
+            text: "Insert classTimes here"
+        Label:
+            text: "Insert classStatus here:"
+        Button:
+            text: "Join Class"
+            on_release:
+                app.root.current = 'classroom'
+                root.manager.transition.direction = "right"
+        Label:
+            text: "Insert officeHours here"
+        Button:
+            text: "Join Office Hours"
+            on_release:
+                app.root.current = 'officehours'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Request a Meeting"
+            on_release:
+                app.root.current = 'mtgreq'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "View Scheduled Meetings"
+            on_release:
+                app.root.current = 'schedmtg'
+                root.manager.transition.direction = "right"
+        Label:
+            text: "Messaging"
+        Button:
+            text: "Send a Message"
+            on_release:
+                app.root.current = 'sendmess'
+                root.manager.transition.direction = "right"
+        Button:
+            text: "View Messages"
+            on_release:
+                app.root.current = 'viewmess'
+                root.manager.transition.direction = "right"
