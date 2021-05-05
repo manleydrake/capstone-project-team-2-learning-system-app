@@ -1,5 +1,7 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.popup import Popup
+from kivy.uix.floatlayout import FloatLayout
 
 
 class LoginScreen(Screen):
@@ -15,11 +17,13 @@ class ClassScreen(Screen):
 
 
 class InteractiveCScreen(Screen):
-    pass
+    def btn(self):
+        show_popup_nonvideo()
 
 
 class VideoCScreen(Screen):
-    pass
+    def btn(self):
+        show_popup_video()
 
     
 class ClassroomScreen(Screen):
@@ -48,6 +52,22 @@ class ViewMessScreen(Screen):
 
 class MyScreenManager(ScreenManager):
     pass
+
+class video(FloatLayout):
+    pass
+
+class Nonvideo(FloatLayout):
+    pass
+
+def show_popup_nonvideo():
+    show = Nonvideo()
+    popupWindow= Popup(title="Popup Window", content= show, size_hint=(None, None), size=(400, 400))
+    popupWindow.open()
+
+def show_popup_video():
+    show = Video()
+    popupWindow= Popup(title="Popup Window", content= show, size_hint=(None, None), size=(400, 400))
+    popupWindow.open()
 
 
 class MyMainApp(App):

@@ -11,7 +11,6 @@
     VideoCScreen:
     OfficeHoursScreen:
 
-
 <LoginScreen>
     name: "login"
     GridLayout:
@@ -177,6 +176,7 @@
             text: "Please wait for your professor to launch interactive classroom features."
         Button:
             text: "Click here to answer before-class poll."
+            on_release: root.btn()
 
 <VideoCScreen>
     name: "classvideo"
@@ -198,6 +198,7 @@
             text: "Video will be displayed here when your professor starts the class session"
         Button:
             text: "Click here to answer before-class poll."
+            on_release: root.btn()
 
 
 <OfficeHoursScreen>
@@ -293,5 +294,35 @@
                     app.root.current = 'classes'
                     root.manager.transition.direction = "right"
         Label:
-            text: "Placeholder Screen for Viewing Messages"      
+            text: "Placeholder Screen for Viewing Messages"
+
+<Video>:
+    auto_dismiss: False
+    name: 'pollv'
+    Label: 
+        text: "What is your favorite food?"
+        size_hint: 0.6, 0.2
+        pos_hint:{'x': 0.2, 'top': 1}  
+    Button:
+        text: "To submit your answer, click anywhere outside of the screen"
+        size_hint: 0.8, 0.2
+        pos_hint: {'x': 0.1, 'y': 0.1}  
+        on_release:
+            app.root.current = 'classvideo'
+            root.manager.transition.direction= 'right'    
+
+<Nonvideo>:
+    auto_dismiss: False
+    name: 'polli'
+    Label: 
+        text: "What is your favorite food?"
+        size_hint: 0.6, 0.2
+        pos_hint:{'x': 0.2, 'top': 1}  
+    Button:
+        text: "To submit your answer, click anywhere outside of the screen"
+        size_hint: 0.8, 0.2
+        pos_hint: {'x': 0.1, 'y': 0.1}  
+        on_release:
+            app.root.current = 'classint'
+            root.manager.transition.direction= 'right'
 
