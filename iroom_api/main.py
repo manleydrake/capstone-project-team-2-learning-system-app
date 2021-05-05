@@ -1,14 +1,5 @@
 from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
-from kivy.uix.widget import Widget
-from kivy.uix.button import Button
-from kivy.properties import ObjectProperty
-from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-
-kv = Builder.load_file("my.kv")
 
 
 class LoginScreen(Screen):
@@ -18,8 +9,34 @@ class LoginScreen(Screen):
 class HomeScreen(Screen):
     pass
 
+
 class ClassScreen(Screen):
     pass
+
+
+class ClassroomScreen(Screen):
+    pass
+
+
+class OfficeHoursScreen(Screen):
+    pass
+
+
+class MeetingReqScreen(Screen):
+    pass
+
+
+class ScheduleMeetingScreen(Screen):
+    pass
+
+
+class SendMessScreen(Screen):
+    pass
+
+
+class ViewMessScreen(Screen):
+    pass
+
 
 class MyScreenManager(ScreenManager):
     pass
@@ -33,26 +50,3 @@ class MyMainApp(App):
 
 if __name__ == "__main__":
     MyMainApp().run()
-
-# Layout for the Login Screen on the Application
-# class LoginScreen(GridLayout):
-
-
-#    def btn(self):
-#        print("Welcome", self.username.text)
-#   pass
-
-# class Background(Widget):
-#    pass
-
-
-# class HomeScreen(Widget):
-
-#   pass
-
-
-# sm = ScreenManager()
-# sm.add_widget(LoginScreen(name='loginscreen'))
-# sm.add_widget(HomeScreen(name='homescreen'))
-# return sm
-# return LoginScreen()
