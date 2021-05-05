@@ -14,6 +14,14 @@ class ClassScreen(Screen):
     pass
 
 
+class InteractiveCScreen(Screen):
+    pass
+
+
+class VideoCScreen(Screen):
+    pass
+
+    
 class ClassroomScreen(Screen):
     pass
 

@@ -7,11 +7,13 @@
     ScheduleMeetingScreen:
     SendMessScreen:
     ViewMessScreen:
+    InteractiveCScreen:
+    VideoCScreen:
+    OfficeHoursScreen:
+
 
 <LoginScreen>
-
     name: "login"
-
     GridLayout:
         cols:1
         size: root.width, root.height
@@ -37,7 +39,6 @@
 
 <HomeScreen>
     name: "home"
-
     GridLayout:
         cols:1
         size: root.width, root.height
@@ -67,15 +68,18 @@
             text: "Logout"
             on_release:
                 app.root.current = 'login'
-                root.manager.transition.direction = "left"
+                root.manager.transition.direction = "right"
 
 
 <ClassScreen>
     name: "classes"
-
     GridLayout:
         cols:1
-
+        Button:
+            text: "Home Screen"
+            on_release:
+                app.root.current = 'home'
+                root.manager.transition.direction = "right"
         Label:
             text: "Insert className here:"
         Label:
@@ -119,27 +123,175 @@
                 app.root.current = 'viewmess'
                 root.manager.transition.direction = "left"
 
-        Button:
-            text: "Home Screen"
-            on_release:
-                app.root.current = 'home'
-                root.manager.transition.directio = "right"
-
 <ClassroomScreen>
     name: "classroom"
 
+    GridLayout:
+        cols:1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "How would you like to join today's class meeting?"
+        Button:
+            text: "JOIN INTERACTIVELY ONLY"
+            on_release:
+                app.root.current = 'classint'
+                root.manager.transition.direction = "left"
+        Label:
+            text: "This device will only display interactive features; make sure to have the video meeting open on another device."
+        Button:
+            text: "JOIN INTERACTIVELY ONLY"
+            on_release:
+                app.root.current = 'classvideo'
+                root.manager.transition.direction = "left"
+        Label:
+            text: "Both video and interactive features will be displayed on this device."
+
+<InteractiveCScreen>
+    name: "classint"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classroom'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Please wait for your professor to launch interactive classroom features."
+        Button:
+            text: "Click here to answer before-class poll."
+
+<VideoCScreen>
+    name: "classvideo"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classroom'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Video will be displayed here when your professor starts the class session"
+        Button:
+            text: "Click here to answer before-class poll."
+
+
 <OfficeHoursScreen>
     name: "officehours"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Please return during your professor's indicated office hours."
 
 <MeetingReqScreen>
     name: "mtgreq"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Placeholder Screen for Meeting Requests"
 
 <ScheduleMeetingScreen>
     name: "schedmtg"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Placeholder Screen for Scheduled Meetings"
 
 <SendMessScreen>
     name: "sendmess"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Placeholder Screen for Sending Messages"
 
 <ViewMessScreen>
-    name: "viewmess"        
+    name: "viewmess"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = 'home'
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Back"
+                on_release:
+                    app.root.current = 'classes'
+                    root.manager.transition.direction = "right"
+        Label:
+            text: "Placeholder Screen for Viewing Messages"      
 
