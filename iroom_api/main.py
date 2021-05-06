@@ -53,7 +53,7 @@ class ViewMessScreen(Screen):
 class MyScreenManager(ScreenManager):
     pass
 
-class video(FloatLayout):
+class Video(FloatLayout):
     pass
 
 class Nonvideo(FloatLayout):

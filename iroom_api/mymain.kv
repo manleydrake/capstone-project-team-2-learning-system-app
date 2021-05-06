@@ -149,7 +149,7 @@
         Label:
             text: "This device will only display interactive features; make sure to have the video meeting open on another device."
         Button:
-            text: "JOIN INTERACTIVELY ONLY"
+            text: "JOIN INTERACTIVELY AND WITH VIDEO"
             on_release:
                 app.root.current = 'classvideo'
                 root.manager.transition.direction = "left"
@@ -303,13 +303,16 @@
         text: "What is your favorite food?"
         size_hint: 0.6, 0.2
         pos_hint:{'x': 0.2, 'top': 1}  
-    Button:
-        text: "To submit your answer, click anywhere outside of the screen"
+    TextInput:
+        id: username
+        multiline: False
+        size_hint: 0.8, 0.2
+        pos_hint: {'x': 0.1, 'y': 0.5}  
+    Label:
+        text: "To submit your answer, click anywhere \noutside of the pop-up window"
         size_hint: 0.8, 0.2
         pos_hint: {'x': 0.1, 'y': 0.1}  
-        on_release:
-            app.root.current = 'classvideo'
-            root.manager.transition.direction= 'right'    
+         
 
 <Nonvideo>:
     auto_dismiss: False
@@ -317,12 +320,15 @@
     Label: 
         text: "What is your favorite food?"
         size_hint: 0.6, 0.2
-        pos_hint:{'x': 0.2, 'top': 1}  
-    Button:
-        text: "To submit your answer, click anywhere outside of the screen"
+        pos_hint:{'x': 0.2, 'top': 1}
+    TextInput:
+        id: username
+        multiline: False
+        size_hint: 0.8, 0.2
+        pos_hint: {'x': 0.1, 'y': 0.5}  
+    Label:
+        text: "To submit your answer, click anywhere \noutside of the pop-up window"
         size_hint: 0.8, 0.2
         pos_hint: {'x': 0.1, 'y': 0.1}  
-        on_release:
-            app.root.current = 'classint'
-            root.manager.transition.direction= 'right'
+        
 
