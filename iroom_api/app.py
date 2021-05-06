@@ -38,19 +38,22 @@ def display_courses():
 @app.route("/classes.html")
 def display_classes():
     #We need a list of class names returned based on the logged in user
-    with open('database/users.csv', 'r', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        for row in reader:
-            if(session['username'] in row):
-                course_ids = row[5:]
-    course_names = []
-    with open('database/courses.csv', 'r', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        for row in reader:
-            for id in course_ids:
-                if(id == row[0]):
-                    course_names.append(row[1])
-    return render_template("classes.html", course_names=course_names)
+    if (session.get('username') != None):
+        with open('database/users.csv', 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            for row in reader:
+                if(session['username'] in row):
+                    course_ids = row[5:]
+        course_names = []
+        with open('database/courses.csv', 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            for row in reader:
+                for id in course_ids:
+                    if(id == row[0]):
+                        course_names.append(row[1])
+        return render_template("classes.html", course_names=course_names)
+    else:
+        return render_template("classes.html")
 
 @app.route("/user_page.html")
 def display_user_page():
